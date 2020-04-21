@@ -7,7 +7,7 @@ fi
 
 # Copy and paste zshrc
 ZSHRC=$(cat ~/.zshrc)
-echo $ZSHRC >> .zshrc
+echo -e $ZSHRC >> .zshrc
 
 DATE=$(date +%d/%m/%Y)
 
