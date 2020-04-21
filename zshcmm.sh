@@ -2,8 +2,8 @@
 #---------------------( Commit my zshrc file )-----------------------#
 
 # Copy and paste zshrc
-ZSHRC=(cat ~/.zshrc)
-echo ZSHRC > .zshrc
+ZSHRC=$(cat ~/.zshrc)
+echo $ZSHRC > .zshrc
 
 DATE=$(date +%d/%m/%Y)
 
