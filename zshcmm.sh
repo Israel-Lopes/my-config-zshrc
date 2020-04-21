@@ -1,6 +1,10 @@
 #!/bin/bash
 #---------------------( Commit my zshrc file )-----------------------#
 
+if [ -f ".zshrc" ]; then
+    rm -rf .zshrc
+fi
+
 # Copy and paste zshrc
 ZSHRC=$(cat ~/.zshrc)
 echo $ZSHRC >> .zshrc
