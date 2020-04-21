@@ -5,15 +5,19 @@ if [ -f ".zshrc" ]; then
     rm -rf .zshrc
 fi
 
-# Copy and paste zshrc
-ZSHRC=$(cat ~/.zshrc)
-echo -e $ZSHRC >> .zshrc
+MYZSH="$HOME/.zshrc"
+DIRZSH="$HOME/zshcmm"
 
-DATE=$(date +%d/%m/%Y)
+if [ -e $MYZSH ] && [ -e $DIRZSH ]; then
+    cp $MYZSH $DIRZSH
+    
+    DATE=$(date +%d/%m/%Y)
 
-git add .
-git commit -m "My zshrc $DATE"
-
-clear
-
-git push origin master
+    git add .
+    git commit -m "My zshrc $DATE"
+    
+    clear
+    
+    git push origin master
+fi
+ 
