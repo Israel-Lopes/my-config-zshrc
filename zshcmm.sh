@@ -16,9 +16,8 @@ if [ -e $MYZSH ] && [ -e $DIRZSH ]; then
 
     git add .
     git commit -m "My zshrc $DATE"
-    
+
     clear
-    
+
     git push origin master
 fi
- 
