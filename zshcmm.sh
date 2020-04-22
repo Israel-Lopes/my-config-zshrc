@@ -1,16 +1,17 @@
 #!/bin/bash
 #---------------------( Commit my zshrc file )-----------------------#
 
-if [ -f ".zshrc" ]; then
+DIRZSH="$HOME/zshcmm"
+
+if [ -f $DIRZSH"/.zshrc" ]; then
     rm -rf .zshrc
 fi
 
 MYZSH="$HOME/.zshrc"
-DIRZSH="$HOME/zshcmm"
 
 if [ -e $MYZSH ] && [ -e $DIRZSH ]; then
     cp $MYZSH $DIRZSH
-    
+
     DATE=$(date +%d/%m/%Y)
 
     git add .
