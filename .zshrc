@@ -106,6 +106,11 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+#FZF
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --no-ignore-vcs'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DEFAULT_OPTS='--height 96% --reverse --preview "cat {}"'
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -144,7 +149,7 @@ source $ZSH/oh-my-zsh.sh
 alias ptbr='setxkbmap -model abnt2 -layout br'
 
 # ( Open gitkraken ) #
-alias start_gitkraken='~/gitkraken/./gitkraken'
+alias start_gitkraken='$HOME/gitkraken/./gitkraken'
 
 # ( Detects second monitor ) #
 alias display_redetect="
@@ -162,9 +167,14 @@ alias lsa="ls -a"
 # ( Upgrade Linux ) #
 alias upgrade-lx="sudo apt update && sudo apt dist-upgrade"
 
+# ( Fzf - skips search files ) #
+alias fzfi='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git}" | fzf'
+# Open nvim on fzfi
+alias vifi='nvim $(fzfi)'
+
 #--------------------------------------------------------------#
 # (Edite .zshrc) #
-alias zsh-config="vim ~/.zshrc"
+alias zsh-config="vim $HOME/.zshrc"
 
 # (Loading .zshrc) #
-alias zsh-loading="source ~/.zshrc"
+alias zsh-loading="source $HOME/.zshrc"
