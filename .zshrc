@@ -178,6 +178,10 @@ alias fzfi='rg --files --hidden --follow --no-ignore-vcs -g "!{node_modules,.git
 # Open nvim on fzfi
 alias vifi='nvim $(fzfi)'
 
+# Open Bluetooth
+alias blue-start='systemctl start bluetooth'
+
+
 #--------------------------------------------------------------#
 # (Edite .zshrc) #
 alias zsh-config="vim $HOME/.zshrc"
